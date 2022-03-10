@@ -144,19 +144,25 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  document.getElementById( "liked" ).innerHTML='';
+  document.getElementById( "liked" ).innerHTML=`<h1>Liked post</h1>`
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
-        const div = createPost(post);
+         div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
     });
 };
 
 const displayReportedPosts = () => {
+  document.getElementById( "reported" ).innerHTML='';
+  document.getElementById( "reported" ).innerHTML=`<h1>Reported post</h1>`;
+  
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
-        const div = createPost(post);
+    reportedPosts.forEach((post) => {
+       const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
-    });
+        
+    });createPost().innerHTML=''
 };
 
 const loadPosts = async () =>{
